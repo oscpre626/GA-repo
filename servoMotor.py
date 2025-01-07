@@ -1,14 +1,12 @@
-# SG90 servo_motor test
+# servo_motor test
 import RPi.GPIO as GPIO
 import time
 
-pin = 17
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(pin, GPIO.OUT)
+GPIO.setup( GPIO.OUT)
 
-# 초기값 설정
-p = GPIO.PWM(pin, 50)       # 50Hz로 시작
-p.start(0)                  # duty_cycle은 0으로 설정
+p = GPIO.PWM( 50)       # 50 Hz
+p.start(0)                  # duty_cycle 
 left_angle = 12
 center_angle = 5
 right_angle = 2
@@ -18,22 +16,20 @@ def setAngle(angle):
     p.ChangeDutyCycle(angle)
     time.sleep(0.5)
 
-# 진짜 메인
 try: 
     while True:
-        var = input("Enter L/C/R : ")
-        if var == 'R' or var == 'r':
+        var = input("Enter A/W/D : ")
+        if var == 'D' or var == 'd':
             setAngle(right_angle)
-        elif var == 'C' or var == 'c':
+        elif var == 'W' or var == 'w':
             setAngle(center_angle)
-        elif var == 'L' or var == 'l':
+        elif var == 'A' or var == 'a':
             setAngle(left_angle)
         else:
             p.stop()
             break
-        print("=================================")
+        print("--")
 
-# 예외 처리
 except KeyboardInterrupt:
     p.stop()
 GPIO.cleanup()
