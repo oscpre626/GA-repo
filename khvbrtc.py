@@ -1,3 +1,2 @@
 import explorerhat as eh
-eh.light.red.on()
-
+eh.light.on()
