@@ -7,6 +7,7 @@ import signal
 
 import VL53L1X
 
+
 MAX_DISTANCE_MM = 800  # Distance at which our bar is full
 TRIGGER_DISTANCE_MM = 80
 BAR_CHAR = u'\u2588'   # Unicode FULL BLOCK
