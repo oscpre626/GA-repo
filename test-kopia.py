@@ -18,7 +18,7 @@ tof2.open()
 tof2.change_address(0x28)
 tof2.start_ranging(1)
 print("Python: Sensor 2 Opened with new address")
-
+time.sleep(1)
 myLCD.clearScreen()
 
 try:
@@ -31,7 +31,7 @@ try:
         myLCD.clearScreen()
         myLCD.print(f"S1: {str(distance_mm1)}mm\nS2: {str(distance_mm2)}mm")
         
-        time.sleep(0.1)
+        time.sleep(1)
 except KeyboardInterrupt:
     tof1.stop_ranging()
     tof2.stop_ranging()

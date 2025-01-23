@@ -39,6 +39,7 @@ def exit_handler(signal, frame):
     tof2.stop_ranging()
     print()
     sys.exit(0)
+    time.sleep(1)
 
 myLCD.clearScreen()
 running = True
@@ -51,10 +52,11 @@ try:
         myLCD.clearScreen()
         distance_in_mm = tof2.get_distance()
         myLCD.print("Sensor 2 distance: {}mm ".format(distance_in_mm))
-        time.sleep(0. 1)
+        time.sleep(1)
 
 except KeyboardInterrupt:
     tof1.stop_ranging()
     tof2.stop_ranging()
     print("\n Stopped ranging. Exiting")
+    time.sleep(1)
 #ctrl + c to stop

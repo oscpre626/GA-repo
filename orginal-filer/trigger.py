@@ -53,7 +53,7 @@ def exit_handler(signal, frame):
     tof.stop_ranging()
     sys.stdout.write("\n")
     sys.exit(0)
-
+    time.sleep(1)
 
 signal.signal(signal.SIGINT, exit_handler)
 
@@ -69,4 +69,4 @@ while running:
     sys.stdout.write(u"{:04.1f}cm {}".format(distance_in_mm / 10.0, bar))    # Output our measurement and bar
     sys.stdout.write(ANSI_COLOR_RESET)
     sys.stdout.flush()                   # Flush the output buffer, since we're overdrawing the last line
-    time.sleep(0.1)
+    time.sleep(1)
