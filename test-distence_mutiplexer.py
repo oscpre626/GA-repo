@@ -22,21 +22,21 @@ myLCD = qwiic_serlcd.QwiicSerlcd()
 print("Python: Initialized")
 tof1 = VL53L1X.VL53L1X(i2c_bus=1, i2c_address=0x29, tca9548a_num=2, tca9548a_addr=0x70)
 tof1.open()
-#tof1.i2c_address(0x29)
+tof1.i2c_address(0x29)
 tof1.start_ranging(1)  # Start ranging, 1 = Short Range, 2 = Medium Range, 3 = Long Range
 print("Python: Sensor 1 Opened")
 
-#tof2 = VL53L1X.VL53L1X(i2c_bus=1, i2c_address=0x29, tca9548a_num=4, tca9548a_addr=0x70)
-#tof2.open()
+tof2 = VL53L1X.VL53L1X(i2c_bus=1, i2c_address=0x29, tca9548a_num=4, tca9548a_addr=0x70)
+tof2.open()
 
-#tof2.start_ranging(1)  # Start ranging, 1 = Short Range, 2 = Medium Range, 3 = Long Range
+tof2.start_ranging(1)  # Start ranging, 1 = Short Range, 2 = Medium Range, 3 = Long Range
 print("Python: Sensor 2 Opened with new address")
 
 def exit_handler(signal, frame):
     global running
     running = False
     tof1.stop_ranging()
-   # tof2.stop_ranging()
+    tof2.stop_ranging()
     print()
     sys.exit(0)
 
@@ -49,12 +49,12 @@ try:
         distance_in_mm = tof1.get_distance()
         myLCD.print("Sensor 1 distance: {}mm ".format(distance_in_mm))
         myLCD.clearScreen()
-        #distance_in_mm = tof2.get_distance()
-        #myLCD.print("Sensor 2 distance: {}mm ".format(distance_in_mm))
-        time.sleep(0.1)
+        distance_in_mm = tof2.get_distance()
+        myLCD.print("Sensor 2 distance: {}mm ".format(distance_in_mm))
+        time.sleep(0. 1)
 
 except KeyboardInterrupt:
     tof1.stop_ranging()
-    #tof2.stop_ranging()
-    print("\nStopped ranging. Exiting")
+    tof2.stop_ranging()
+    print("\n Stopped ranging. Exiting")
 #ctrl + c to stop
