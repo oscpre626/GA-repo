@@ -10,7 +10,7 @@ from datetime import datetime
 bus = smbus.SMBus(1) 
 Sensor_ADDRESS = 0x29;
 REGISTER = 0x00;
-data = bus.read_all(Sensor_ADDRESS, REGISTER);
+data = bus.read_(Sensor_ADDRESS, REGISTER);
 print(f"Data: {data}");
 
 myLCD = qwiic_serlcd.QwiicSerlcd()
