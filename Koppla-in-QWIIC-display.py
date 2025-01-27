@@ -1,0 +1,88 @@
+# Koppla in QWIIC display 
+# pip install sparkfun-qwiic-serlcd
+
+import qwiic_serlcd
+myLCD = qwiic_serlcd.QwiicSerlcd()
+myLCD.clearScreen()
+myLCD.print("Testar display")
+myLCD.setCursor(0,1)
+myLCD.print("Andra raden")
+
+# Koppla in avståndsmätare 
+# pip install sparkfun-qwiic-vl53l1x*x (x upphögt till 2)
+
+
+
+# sudo apt update
+# sudo apt install python3-pip
+# pip install explorerhat adafruit-circuitpython-vl53lxx sparkfun-circuitpython-serlcd
+
+import time
+import explorerhat
+import board
+import busio
+from adafruit_vl53lxx import VL53L1X
+from sparkfun_serlcd import Sparkfun_SerLCD_I2C
+
+# Initiera I2C-bussen
+i2c = busio.I2C(board.SCL, board.SDA)
+
+# Initiera VL53L1x avståndssensor
+vl53 = VL53L1X(i2c)
+vl53.distance_mode = VL53L1X.DISTANCE_MODE_LONG
+vl53.timing_budget = 100  # Tidsbudget för mätningar (i ms)
+vl53.start_ranging()
+
+# Initiera SerLCD-display
+lcd = Sparkfun_SerLCD_I2C(i2c)
+lcd.clear()
+lcd.write("Initieras...")
+
+# Motorfunktioner
+def drive_forward(speed=100):
+    explorerhat.motor.one.forward(speed)
+    explorerhat.motor.two.forward(speed)
+    lcd.clear()
+    lcd.write("Kör framåt")
+
+def drive_backward(speed=100):
+    explorerhat.motor.one.backward(speed)
+    explorerhat.motor.two.backward(speed)
+    lcd.clear()
+    lcd.write("Backar")
+
+def stop_motors():
+    explorerhat.motor.one.stop()
+    explorerhat.motor.two.stop()
+    lcd.clear()
+    lcd.write("Motorer stoppade")
+
+# Huvudprogram
+try:
+    while True:
+        # Läs avstånd från VL53L1x
+        distance = vl53.distance
+        lcd.clear()
+        lcd.write(f"Avst: {distance:.1f} mm")
+
+        if distance < 300:  # Om avståndet är mindre än 30 cm
+            stop_motors()
+            lcd.write("\nFör nära!")
+            time.sleep(1)
+            drive_backward()
+            time.sleep(2)
+            stop_motors()
+        else:
+            drive_forward()
+        
+        time.sleep(0.1)
+
+except KeyboardInterrupt:
+    # Avsluta programmet på ett säkert sätt
+    stop_motors()
+    vl53.stop_ranging()
+    lcd.clear()
+    lcd.write("Program avslutat")
+
+# python3 robot_control.py
+

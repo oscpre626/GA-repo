@@ -5,8 +5,6 @@ import explorerhat as eh
 
 XSHUT = 6
 
-eh.XSHUT.off()
-
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(XSHUT,GPIO.OUT)
