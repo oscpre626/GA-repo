@@ -66,7 +66,7 @@ try:
 
         # Uppdatera LCD-displayen
         myLCD.clearScreen()
-        myLCD.print(f"S1: {dist1}mm  " + " \n "+f" S2: {dist2}mm ")   
+        myLCD.print(f"S1: {dist1}mm  " + " \n "+f" S2: {dist2}mm")   
         
         time.sleep(0.5)  # Uppdateringsfrekvens
 except KeyboardInterrupt:
