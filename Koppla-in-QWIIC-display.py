@@ -1,5 +1,3 @@
-# Koppla in QWIIC display 
-# pip install sparkfun-qwiic-serlcd
 
 import qwiic_serlcd
 myLCD = qwiic_serlcd.QwiicSerlcd()
@@ -8,14 +6,9 @@ myLCD.print("Testar display")
 myLCD.setCursor(0,1)
 myLCD.print("Andra raden")
 
-# Koppla in avståndsmätare 
-# pip install sparkfun-qwiic-vl53l1x*x (x upphögt till 2)
-
-
-
 # sudo apt update
 # sudo apt install python3-pip
-# pip install explorerhat adafruit-circuitpython-vl53lxx sparkfun-circuitpython-serlcd
+# pip install explorerhat adafruit-circuitpython-vl53l1x sparkfun-circuitpython-serlcd
 
 import time
 import explorerhat

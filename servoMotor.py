@@ -28,13 +28,13 @@ try:
                 eh.motor.two.backwards()
         elif var == 'W' or var == 'w':
             while keyboard.is_pressed('w'):
-            eh.motor.one.forwards()
-            eh.motor.two.forwards()
+                eh.motor.one.forwards()
+                eh.motor.two.forwards()
             #setAngle(center_angle)
         elif var == 'A' or var == 'a':
             while keyboard.is_pressed('a'):
-            eh.motor.one.backwards()
-            eh.motor.two.forwards()
+                eh.motor.one.backwards()
+                eh.motor.two.forwards()
             #setAngle(left_angle)
         else:
             #eh.motor.stop()
