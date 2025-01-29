@@ -1,5 +1,5 @@
 import qwiic_vl53l1x
-#import qwiic_serlcd
+import qwiic_serlcd
 import time
 import explorerhat as eh
 
@@ -15,16 +15,15 @@ sensor1 = qwiic_vl53l1x.QwiicVL53L1X()
 sensor2 = qwiic_vl53l1x.QwiicVL53L1X(NEW_I2C_ADDRESS)
 
 # Skapa LCD-objekt
-#myLCD = qwiic_serlcd.QwiicSerlcd(NEW_I2C_ADDRESS_LCD)
-
+myLCD = qwiic_serlcd.QwiicSerlcd()
 
 # Initiera LCD
-#if not myLCD.begin():
- #   print("Kunde inte hitta LCD-skärmen")
-  #  exit(1)
+if not myLCD.begin:
+    print("Kunde inte hitta LCD-skärmen")
+    exit(1)
 
-#myLCD.clearScreen()
-#myLCD.setBacklight(255, 255, 255)  # Vit bakgrund
+myLCD.clearScreen()
+myLCD.setBacklight(255, 255, 255)  # Vit bakgrund
 
 XSHUT_SENSOR1.off()
 XSHUT_SENSOR2.off()
@@ -42,7 +41,6 @@ if not sensor1.sensor_init():
 print("Ändrar adress på Sensor 1 till", hex(NEW_I2C_ADDRESS))
 sensor1.set_i2c_address(NEW_I2C_ADDRESS)
 time.sleep(0.1)
-
 
 XSHUT_SENSOR2.on()
 time.sleep(0.1)
@@ -67,13 +65,13 @@ try:
         print(f"Sensor 1: {dist1} mm | Sensor 2: {dist2} mm")
 
         # Uppdatera LCD-displayen
- #       myLCD.clearScreen()
-  #      myLCD.print(f"S1: {dist1}mm\nS2: {dist2}mm")
+        myLCD.clearScreen()
+        myLCD.print(f"S1: {dist1}mm  " + " \n "+f" S2: {dist2}mm")
         
         time.sleep(0.5)  # Uppdateringsfrekvens
 except KeyboardInterrupt:
     print("Stoppar mätning")
     sensor1.stop_ranging()
     sensor2.stop_ranging()
-   # myLCD.clearScreen()
-    #myLCD.print("Program avslutat")
+    myLCD.clearScreen()
+    myLCD.print("Program avslutat")
