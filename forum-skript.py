@@ -1,29 +1,29 @@
 import time
-import board
 import busio
-from adafruit_vl53l0x import VL53L0X
+import explorerhat as eh
+import qwiic_vl53l1x
 
 # Define shutdown pins
-XSHUT_pins = [5, 6, 7, 8, 9]  # GPIO-pins for sensor enable
+XSHUT_pins = [1,2,3,4]  # GPIO-pins for sensor enable
 
 # Define new I2C addresses
-SENSOR_ADDRESSES = [42, 43, 44, 45, 46]  # New addresses
+SENSOR_ADDRESSES = [44,45]  # New addresses
 
 def init_sensors():
-    i2c = busio.I2C(board.SCL, board.SDA)
+    #i2c = busio.I2C(eh.SCL, eh.SDA)
     sensors = []
     
     # Set all shutdown pins to LOW to disable all sensors
     for pin in XSHUT_pins:
-        board.DigitalInOut(pin).direction = board.Direction.OUTPUT
-        board.DigitalInOut(pin).value = False
+        eh.DigitalInOut(pin).direction = eh.output.off()
+        eh.DigitalInOut(pin).value = False
         time.sleep(0.01)
     
     # Initialize sensors one by one
     for i, pin in enumerate(XSHUT_pins):
-        board.DigitalInOut(pin).value = True  # Power up sensor
+        eh.DigitalInOut(pin).value = True  # Power up sensor
         time.sleep(0.01)  # Wait for boot-up
-        sensor = VL53L0X(i2c)
+        sensor = VL53L1X(i2c)
         sensor.set_address(SENSOR_ADDRESSES[i])
         sensors.append(sensor)
     
