@@ -4,10 +4,8 @@ import argparse
 
 import VL53L1X
 
-
-addr_current = 0x29
+addr_current = 0x32
 addr_desired = 0x33
-
 
 def auto_int(x):
     return int(x, 0)
@@ -31,7 +29,6 @@ Desired address: {:02x}
 Press Ctrl+C to exit.
 
 """.format(addr_current, addr_desired))
-
 
 tof = VL53L1X.VL53L1X(i2c_bus=1, i2c_address=addr_current)
 tof.open()
