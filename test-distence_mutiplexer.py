@@ -29,7 +29,8 @@ sensor1 = qwiic_vl53l1x.QwiicVL53L1X()
 sensor1.set_i2c_address(0x32)
 sensor1.sensor_init()
 #sensor1.on()
-sensor1.start_ranging(1)  # Start ranging, 1 = Short Range, 2 = Medium Range, 3 = Long Range
+sensor1.start_ranging(1)  
+# Start ranging, 1 = Short Range, 2 = Medium Range, 3 = Long Range
 #sensor1.set_distance_mode(1)
 
 #sensor2 = VL53L1X.VL53L1X(i2c_bus=1, i2c_address=0x29, tca9548a_num=4, tca9548a_addr=0x70)
@@ -38,10 +39,10 @@ sensor1.start_ranging(1)  # Start ranging, 1 = Short Range, 2 = Medium Range, 3 
 #tof2.start_ranging(1)  # Start ranging, 1 = Short Range, 2 = Medium Range, 3 = Long Range
 
 sensor2 = qwiic_vl53l1x.QwiicVL53L1X()
-sensor2.set_i2c_address(0x38)
-sensor2.sensor_init()
+#sensor2.set_i2c_address(0x38)
+#sensor2.sensor_init()
 #sensor2.on()
-sensor2.start_ranging(1)
+#sensor2.start_ranging(1)
 print("Python: Sensors Initialized")
 
 #print("Python: Sensor 2 Opened with new address")

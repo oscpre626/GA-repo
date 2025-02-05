@@ -1,12 +1,13 @@
 import time
 import board
 import busio
-from adafruit_vl53l0x import VL53L0X
+#from adafruit_vl53l0x import VL53L0X
+import qwiic_vl53l1x
 
-i2c = busio.I2C(board.SCL, board.SDA)
+#i2c = busio.I2C(board.SCL, board.SDA)
 
-def set_id(sensor, new_address):
-    sensor.set_address(new_address)
+def set_id1(sensor, new_address):
+    sensor1.set_address(new_address)
 
 def setup_sensors():
     global lox1, lox2
