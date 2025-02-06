@@ -19,10 +19,12 @@ try:
     while True:
         distance_mm = tof.get_distance()
         print("Time: {} Distance: {}mm".format(datetime.utcnow().strftime("%S.%f"), distance_mm))
-        time.sleep(0.001)
-
+        time.sleep(0.1)
+  
         myLCD.clearScreen()
-        myLCD.print(str(distance_mm))
+        myLCD.print(f"S1: {distance_mm}mm ")   
+        time.sleep(0.1)
+       
 except KeyboardInterrupt:
     tof.stop_ranging()
 #ctrl + c to stop

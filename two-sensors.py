@@ -104,3 +104,4 @@ except KeyboardInterrupt:
     sensor2.stop_ranging()
     myLCD.clearScreen()
     myLCD.print("Program avslutat")
+    time.sleep(0.1)
