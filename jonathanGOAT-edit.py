@@ -7,7 +7,7 @@ print("on")
 eh.output.one.on()
 mySensor = qwiic_vl53l1x.QwiicVL53L1X()
      
-mySensor.sensor_init()
+#mySensor.sensor_init()
 
   
 try:
