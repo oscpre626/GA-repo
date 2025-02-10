@@ -1,13 +1,15 @@
+
 import qwiic_vl53l1x
 import time
 import sys
 import explorerhat as eh
+import qwiic_serlcd
 
 print("on")
 eh.output.one.on()
 mySensor = qwiic_vl53l1x.QwiicVL53L1X()
      
-#mySensor.sensor_init()
+mySensor.sensor_init()
 
   
 try:
@@ -45,3 +47,5 @@ while True:
 
     except Exception as e:
         print(e)
+
+  
