@@ -2,9 +2,11 @@ import explorerhat as eh
 
 while True:
 	try: 
-		eh.motor.forwards()
+		
+		eh.motor.stop()
 	except KeyboardInterrupt:
 		eh.motor.stop()
+
 
 		
 			

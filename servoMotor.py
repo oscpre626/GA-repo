@@ -19,20 +19,21 @@ def setAngle(angle):
     time.sleep(0.5)
 
 try: 
+    
     while True:
         var = input("Enter A/W/D : ")
         if var == 'D' or var == 'd':
-            while keyboard.is_pressed('d'):
+            while key.is_pressed('d'):
             #setAngle(right_angle)
                 eh.motor.one.forwards()
                 eh.motor.two.backwards()
         elif var == 'W' or var == 'w':
-            while keyboard.is_pressed('w'):
+            while key.is_pressed('w'):
                 eh.motor.one.forwards()
                 eh.motor.two.forwards()
             #setAngle(center_angle)
         elif var == 'A' or var == 'a':
-            while keyboard.is_pressed('a'):
+            while key.is_pressed('a'):
                 eh.motor.one.backwards()
                 eh.motor.two.forwards()
             #setAngle(left_angle)
