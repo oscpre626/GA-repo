@@ -1,4 +1,4 @@
-- PWM, config pwm för våra motorer kombinerat med sensorernas output så vi kan svänga bra
-- display, config display:n för vad vi vill åstakomma
+- PWM, config pwm för våra motorer kombinerat med sensorernas output så vi kan svänga bra, halvklar
+- display, config display:n för vad vi vill åstakomma, vet att det fungerar men måste gåra det
 - Final Assembly, koppla upp allt som vi behöver och vill använda för den sista gången, Cable Management
 - testing med allt, TigerVNC, mörker vs ljus körning
