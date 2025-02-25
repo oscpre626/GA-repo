@@ -3,7 +3,7 @@ import explorerhat
 
 R1 = 4660
 V = 5.125
-
+#ckeaksksks
 threshold = 2.5
 delay = 0.25
 
