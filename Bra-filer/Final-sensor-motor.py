@@ -44,16 +44,16 @@ while True:
         sensor1.stop_ranging()
         sensor2.stop_ranging()
         
-        eh.motor.forwards(50)
+        eh.motor.forwards(60)
         y = str(distance1)
         x = str(distance2)
         
         if distance1 < 100:
-            eh.motor.one.forwards(25)
+            eh.motor.one.forwards(30)
         
         
         if distance2 < 100:
-            eh.motor.two.forwards(25)
+            eh.motor.two.forwards(30)
         
         time.sleep(.05)
         myLCD.clearScreen()
