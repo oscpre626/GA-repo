@@ -17,7 +17,10 @@
   3. Uppkoppling med trådlös anslutning
      - wifi
      - ![image](https://github.com/user-attachments/assets/bcc52b7b-7062-4918-b740-e8bf6817c4c3)
+     - raspberry pi connect
+     - ![image](https://github.com/user-attachments/assets/cc39f88a-343f-46e5-9dfe-67526c89a49c)
      - 
+
 
      
      
