@@ -11,4 +11,13 @@
    - hejej
    - 
 
-   
+  2. När man loggat in i datorn.
+     -
+
+  3. Uppkoppling med trådlös anslutning
+     - wifi
+     - ![image](https://github.com/user-attachments/assets/bcc52b7b-7062-4918-b740-e8bf6817c4c3)
+     - 
+
+     
+     
