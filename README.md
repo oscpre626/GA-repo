@@ -18,7 +18,8 @@
      - wifi
      - ![image](https://github.com/user-attachments/assets/bcc52b7b-7062-4918-b740-e8bf6817c4c3)
      - raspberry pi connect
-     - 
+     - ![image](https://github.com/user-attachments/assets/1e6dfb8f-454c-4cf6-954e-e771d9712a6e)
+
      - 
 
 
