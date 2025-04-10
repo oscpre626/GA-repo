@@ -20,7 +20,9 @@
      - raspberry pi connect
      - ![image](https://github.com/user-attachments/assets/1e6dfb8f-454c-4cf6-954e-e771d9712a6e)
 
+     - ![image](https://github.com/user-attachments/assets/76e2f88f-7382-454d-85ca-671e8ebc67d9)
      - 
+
 
 
      
