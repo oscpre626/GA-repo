@@ -7,7 +7,7 @@
    - gjgjg
    - ![20250410_110707](https://github.com/user-attachments/assets/73df1723-b003-4471-88ea-a1b13c92c470)
    - med alla externa enheter kopplade
-   - ![20250410_111558](https://github.com/user-attachments/assets/09c34e1c-d770-496b-9f86-829957304b49)
+   - ![20250410_111558](https://github.com/user-attachments/assets/b051b32f-b079-4c30-bb56-ea05fffd9450)
    - hejej
    - 
 
