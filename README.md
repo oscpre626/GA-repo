@@ -1,15 +1,16 @@
 # Guide för vår produkt #
 
-!Viktigt! Uppdatera INTE datorn om en sådan knapp/ notis kommer upp. Vi behöver inte ta några onödiga risker nu eller hur?
+!Viktigt! Uppdatera INTE datorn om en sådan knapp/ notis kommer upp. Vi behöver inte ta några onödiga risker nu eller hur? 
+Powerbanken är inte riktigt stark nog för att stödja all uppkopplad elektronik så displayen som sitter ovanpå powerbanken får inte vara ikopplad medans man kör "Final-sensor-motor.py" då allt vanligtvis sätts igång. Om ni vill testa den kan ni köra "jonathaGOAT-edit.py" skriptet
 
 1. Hur man kopplar alla enheter och sladdar till bilen
    - Sätt i rätt sladd i rätt uttag på ovansidan av Raspberry Pi:n
    - *Man ska inte sätta dit någon sladd på det blåa området
    - De fyra sladdar som sitter i klämmor är för motorerna och ska kopplas till motoruttagen. Den gula och orangea hör ihop medan den gröna och röda hör ihop. Den gröna respektive gula sladden ska sitta på någon av de negativa motoruttagen medan den orangea och röda sitter på en av de positiva motoruttagen. Om man sätter den gröna på -1 ska den röda sitta på +1, då sitter gul på -2 och orange på +2. Den enskilda orangea sladden är till för en av sensorerna och ska sitta på output 1. Den enda svarta sladden ska sättas i GND-uttaget.
     ![20250410_105910](https://github.com/user-attachments/assets/df341f07-15d1-43e2-9441-a37327e2898a)
-   - De svarta, röda, blå och gula sladdarna som är tvinnade är till för sensorerna. Den röda tvinnade sladden ska sättas i 3v3-uttaget. Den gula tvinnade sladden ska sättas i SCL-uttaget och den blåa tvinnade sladden ska sättas i SDA-uttaget.
+   - De svarta, röda, blå och gula sladdarna som är tvinnade är till för sensorerna. Den röda tvinnade sladden ska sättas i 3v3-uttaget. Den gula tvinnade sladden ska sättas i SCL-uttaget och den blåa tvinnade sladden ska sättas i SDA-uttaget. Den svarta sladden sitter på GND som sagt.
     ![20250410_110707](https://github.com/user-attachments/assets/73df1723-b003-4471-88ea-a1b13c92c470)
-   - Den orangea JBL kabeln är datorns strömkabel och sätts in under ettan. Den sätts in i powerbanken men bara ett av uttagen fungerar så se till att ha powerbanken liggandes som i bilden nedan. Under tvåan finns datorns bildskärmsanslutning, som tar emot micro USB-C kablar. Sätt först in micro USB-C HDMI adaptern och koppla sedan en HDMI sladd via adaptern till en skärm. Tangentbord och mus kopplas till USB-uttagen vid sidan av datorn. Om man vill kan man koppla en LAN-kabel till datorn, men om man vill köra bilen trådlöst behöver man tilldela sin mobildata till bilen.
+   - Den orangea JBL kabeln är datorns strömkabel och sätts in under ettan. Den sätts in i USB-uttaget längst från power-knappen då det andra uttaget inte fungerar som output. Under tvåan på explorer HAT Pro finns datorns bildskärmsanslutning, som tar emot micro USB-C kablar. Sätt först in micro USB-C HDMI adaptern och koppla sedan en HDMI sladd via adaptern till en skärm. Tangentbord och mus kopplas till USB-uttagen vid sidan av datorn. Om man vill kan man koppla en LAN-kabel till datorn, men om man vill köra bilen trådlöst behöver man tilldela sin mobildata till bilen.
     ![20250410_111558](https://github.com/user-attachments/assets/b051b32f-b079-4c30-bb56-ea05fffd9450)
 
 2. Uppkoppling med trådlös anslutning
