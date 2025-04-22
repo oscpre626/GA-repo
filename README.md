@@ -1,4 +1,6 @@
 # Guide för vår produkt #
+# Inlogg till Raspberry Pi connect. Användarnamn: oscpre626@edu.linkoping.se, Lösenord: oscarojoel #
+# Inlogg till Raspberry Pi datorn. Användarnamn: ojGA, Lösenord: ojGA #
 
 !Viktigt! Uppdatera INTE datorn om en sådan knapp/ notis kommer upp. Vi behöver inte ta några onödiga risker nu eller hur? 
 Powerbanken är inte riktigt stark nog för att stödja all uppkopplad elektronik så displayen som sitter ovanpå powerbanken får inte vara ikopplad medans man kör "Final-sensor-motor.py" då allt vanligtvis sätts igång. Om ni vill testa den kan ni köra "jonathaGOAT-edit.py" skriptet
