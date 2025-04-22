@@ -3,12 +3,12 @@ import qwiic_vl53l1x
 import time
 import sys
 import explorerhat as eh
-import qwiic_serlcd
+#import qwiic_serlcd
 
 print("on")
 eh.output.one.on()
 mySensor = qwiic_vl53l1x.QwiicVL53L1X()
-myLCD = qwiic_serlcd.QwiicSerlcd()     
+#myLCD = qwiic_serlcd.QwiicSerlcd()     
      
 #mySensor.sensor_init()
 
@@ -25,7 +25,7 @@ except Exception as e:
 
 print("off")
 eh.output.one.off()
-myLCD.clearScreen()
+#myLCD.clearScreen()
 
 sensor1 = qwiic_vl53l1x.QwiicVL53L1X(address=0x29)
 sensor2 = qwiic_vl53l1x.QwiicVL53L1X(address=0x30)
@@ -44,20 +44,21 @@ while True:
         sensor1.stop_ranging()
         sensor2.stop_ranging()
         
-        eh.motor.forwards(60)
-        y = str(distance1)
-        x = str(distance2)
+        eh.motor.one.forwards(41)
+        eh.motor.two.forwards(40)
+        #y = str(distance1)
+        #x = str(distance2)
         
-        if distance1 < 100:
-            eh.motor.one.forwards(30)
+        if distance1 < 200:
+            eh.motor.one.forwards(0)
         
         
-        if distance2 < 100:
-            eh.motor.two.forwards(30)
+        if distance2 < 200:
+            eh.motor.two.forwards(0)
         
         time.sleep(.05)
-        myLCD.clearScreen()
-        myLCD.print(y + "," + x)
+        #myLCD.clearScreen()
+        #myLCD.print(y + "," + x)
         
         print("Distance(mm) (1,2): (",distance1, ",",distance2, ")")
     except Exception as e:
